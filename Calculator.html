@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Calculator Using Jquery</title>
+        <style>
+            #div1{
+                border: 2px solid black;
+                height: 500px;
+                width: 350px;
+                display: block;
+                background-color: lightgray ;
+                margin-left: 450px;
+                margin-top: 50px;
+                
+            }
+            #answer{
+                width:330px;
+                height:75px;
+                margin-left: 10px;
+                margin-top: 20px;
+                font-size: 40px;
+                margin-top: 20px;
+                padding: 10px;
+                padding-top: 10px;
+                padding-bottom: 0px;
+                
+            }
+            input[type=button]{
+                background-color: white;
+                border:none;
+                color: black;
+                font-size: 20px;
+                border-radius: 75%;
+                text-align: center;
+                height: 65px;
+                width: 65px;
+                margin: 3px;
+                
+            }
+            table{
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <input type="text" id="answer" >
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" value="C" id="clear" style="background-color:lightcoral">
+                    </td>
+                </tr>
+                <tr>
+                   <td><input type="button" value="7" onclick="insertVal(7)"></td>
+                   <td><input type="button" value="8" onclick="insertVal(8)"></td>
+                   <td><input type="button" value="9" onclick="insertVal(9)" ></td>
+                   <td><input type="button" value="+" onclick="insertVal('+')" style="background-color: rgb(154, 207, 207);" ></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="insertVal(4)" ></td>
+                    <td><input type="button" value="5" onclick="insertVal(5)"></td>
+                    <td><input type="button" value="6" onclick="insertVal(6)"></td>
+                    <td><input type="button" value="-" onclick="insertVal('-')" style="background-color: rgb(154, 207, 207);" ></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1" onclick="insertVal(1)"></td>
+                    <td><input type="button" value="2" onclick="insertVal(2)"></td>
+                    <td><input type="button" value="3" onclick="insertVal(3)"></td>
+                    <td><input type="button" value="*" onclick="insertVal('*')" style="background-color: rgb(154, 207, 207);" ></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="insertVal(0)"></td>
+                    <td><input type="button" value="." onclick="insertVal('.')"></td>
+                    <td><input type="button" value="/" onclick="insertVal('/')" style="background-color: rgb(154, 207, 207);"></td>
+                    <td><input type="button" value="=" onclick="result()" style="background-color: rgb(154, 207, 207);"></td>
+                </tr>
+            </table>
+            
+        
+        </div>
+
+    </body>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#clear").click(function(){
+               //for clear the display
+               $("#answer").val("");
+            });
+        
+           
+        });
+
+        function result(){
+            return $("#answer").val(eval($("#answer").val()));   
+        }    
+
+        function insertVal(char){ // for inserting values in display
+           $("#answer").val($("#answer").val()+char);
+        }
+        
+    </script>
+</html>
